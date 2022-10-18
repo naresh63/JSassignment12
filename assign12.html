@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assign 12</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // 1.
+      let emp_record = [
+        { id: 67, name: "Hitanshu", salary: "75000" },
+        { id: 48, name: "Ninad", salary: "82000" },
+        { id: 29, name: "Amandeep", salary: "98000" },
+      ];
+      emp_record.map((ele, ind) => console.log(ele.id));
+      // a.
+      let arr_ids = emp_record.map((ele, ind) => ele.id);
+      console.log(arr_ids, "arr of ids");
+      // b.
+      let count1 = 0;
+      emp_record.map((ele, ind) => {
+        ele.name;
+        count1++;
+      });
+      console.log("count of employees=>", count1);
+
+      // c.
+      for (let i = 0; i < emp_record.length; i++) {
+        console.log(emp_record[i].id, ":", emp_record[i].name);
+      }
+
+      // d.
+      let emp_salary = emp_record.map((ele, ind) => Number(ele.salary));
+      console.log(emp_salary);
+
+      // e.
+      let emp_sal_total = emp_salary.reduce((total, val) => total + val);
+      console.log(emp_sal_total, "total");
+      let avg_sal = emp_sal_total / emp_salary.length;
+      console.log("avg salary=>", avg_sal);
+
+      // 2.
+      const students = new Map();
+      students.set("name", ["Hitanshu", "Ninad", "Amandeep"]);
+      students.set("id", [1, 2, 3]);
+      students.set("scores", [90, 88, 92]);
+      console.log("stud map", students);
+
+      // a.
+      let old_name = students.get("name");
+      students.set("name", [...old_name, "navin", "shubham", "ravi"]);
+
+      // b.
+      console.log("stud name-", students.get("name"));
+
+      // c.
+      console.log(students.delete("scores"));
+
+      // d.
+      for (const x of students.values()) {
+        console.log("values-", x);
+      }
+
+      students.forEach(function (value, key) {
+        console.log('key+value',key,value)
+      });
+
+      students.forEach(function (value, key,arr) {
+        console.log('key+value+map',key,value,arr)
+      });
+
+      // 3.
+      let arr3 = [1, 2, 3, 4, 5];
+      let square_arr = arr3.map((ele) => ele * ele);
+      console.log("square of ele in arr =>", square_arr);
+    </script>
+  </body>
+</html>
